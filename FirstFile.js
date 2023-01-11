@@ -11,7 +11,11 @@ function PrintSession(sessionName) {
     console.log("session Name from function- ",sessionName)
 }
 
+function PrintName(name){
+    console.log("My name is ",name)
+}
 
+PrintName("Carlos")
 //calling the function using var and manual input
 PrintSession(sessionName)
 PrintSession("Core Javascript")
