@@ -1,0 +1,5 @@
+
+var Animal = {
+     animalType: "Animal",
+
+}
