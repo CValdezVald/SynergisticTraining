@@ -1,0 +1,1 @@
+//In JS we can declare var as variables
