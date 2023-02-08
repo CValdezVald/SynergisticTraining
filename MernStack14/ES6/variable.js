@@ -53,5 +53,7 @@ console.log("index: ",index)
 
 // for (let index =0 ;index< 5 ; index++) {
     // console.log(index)
+   
     
+//for of loop gets key and value for in only gets ley
 // }

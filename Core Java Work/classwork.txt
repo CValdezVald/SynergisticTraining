@@ -1,0 +1,310 @@
+package myWork;
+
+public class CharList {
+/**
+* Array to store chars
+*/
+private char[] characters = null;
+
+/**
+* The instance variable characters will be initialized
+* to length 0.
+*/
+public CharList(){
+
+characters = new char[0];
+}
+
+
+public CharList(String other) {
+	if(other.length()==0) {
+		characters = new char[0];
+	}else {
+		characters = new char[other.length()];
+		for(int i = 0;i <other.length();i++) {
+		characters[i] = other.charAt(i);
+		}
+	}
+	
+}
+
+public CharList(CharList other)
+{
+	characters = other.characters;
+}
+
+public int length(){
+	int count = 0;
+	for(int i = 0; i <this.characters.length;i++) {
+		if(this.characters[i] != '\0') count++;
+	}
+	
+return count;
+}
+/**
+* Compares to CharLists returning true if they contain the same
+* chars and are the same length.
+* @param other presumed to be a CharList. Must type-cast to
+* CharList if it is an instance of this class.
+* @return true if both arrays contain the same chars and
+* are the same length.
+*/
+@Override
+public boolean equals(Object other){
+	CharList arr = (CharList)other;
+	
+	if(arr.length()== this.length()) {
+		for(int i = 0;i<this.length();i++) {
+			if(arr.characters[i]!= this.characters[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+return false;
+}
+
+
+/**
+* Return the char at the argument index from the characters array.
+* @param index the position of the char to return.
+* @return The char at the given index or '\0' if no char is
+* available.
+*/
+public char charAt(int index){
+//TODO Write your code here, then delete this comment
+	//check if index is out of bounds or not
+	if(index > this.length()|| index<0) {
+		return '\0';
+	}else return this.characters[index];
+
+}
+
+/**
+* Returns a new, deep-copy of the instance variable.
+* You must use a loop to copy the characters into a new array.
+* @return A char array copy of the instance variable, characters.
+*/
+public char[] toCharArray(){
+char[] temp = new char[this.length()];
+for(int i= 0;i<temp.length;i++) {
+	temp[i] = this.characters[i];
+}
+return temp;
+}
+
+/**
+* Returns a copy of the instance variable as a String.
+* You must use a loop to copy the characters into a String.
+* @return String representation of the instance variable,
+* characters.
+*/
+@Override
+public String toString(){
+String convert = "";
+for(int i =0;i<this.length();i++) {
+	convert+=this.characters[i];
+}
+return convert;
+}
+
+/**
+* Adds the argument character to the end of this CharList's
+* characters. The resulting array will replace this CharList's
+* instance variable.
+* @param letter The char to append.
+*/
+public void append(char letter){
+	if(Character.compare(letter,'\0')==0) {
+		System.out.println("invalid character");
+	}
+	String increase = this.toString()+letter;
+	this.characters = new char[increase.length()];
+	for(int i =0;i< characters.length;i++) {
+		characters[i] =increase.charAt(i);
+	}
+	
+}
+
+/**
+* Adds each character from the argument CharList to the end of
+* this CharList's characters. The resulting array will replace
+* this CharList's instance variable.
+* @param other The CharList to append.
+*/
+public void append(CharList other){
+//TODO Write your code here, then delete this comment
+}
+
+
+
+/**
+* Adds each character from the argument CharList to the start of
+* this CharList's characters. The resulting array will replace
+* this CharList's instance variable.
+* @param other The CharList to prepend.
+*/
+public void prepend(CharList other){
+//TODO Write your code here, then delete this comment
+}
+
+/**
+* Adds each character from the argument CharList into this
+* CharList's at the specified index. All characters at that
+* index or beyond will be pushed to the end.
+*
+* If the specified index is equal to the length, it will add
+* the characters to the end of the array. If the specified
+* index is less than 0 or greater than the length, this method
+* does nothing.
+* @param other The CharList to insert.
+* @param index The position to insert at.
+*/
+public void insert(CharList other, int index){
+//TODO Write your code here, then delete this comment
+}
+
+/**
+* Returns the substring in the range from start up to and
+* excluding end.
+* <p>Examples:</p>
+* <ul>
+* <li>new CharList("yes").getRange(1, 1) returns ""</li>
+*  <li>new CharList("yes").getRange(0, 2) returns "ye"</li>
+*  <li>new CharList("yes").getRange(0, 3) returns "yes"</li>
+*  <li>new CharList("yes").getRange(0, 4) returns null</li>
+* </ul>
+* @param start Index of first character.
+* @param end Index of the character to stop before.
+* @return A CharList representing the chars in this range. If
+* start is less than zero, or end is greater than the length
+* or start is greater than end, return null.
+*/
+public CharList getRange(int start, int end){
+//TODO Write your code here, then delete this comment
+return null;
+}
+
+
+/**
+*
+* Searches through the characters in this CharList for the
+* sequence matching the argument CharList. If found, returns
+* the index of the first character in the sequence where it was
+* found. If it was not found, returns -1.
+*
+* @param substring Substring to find.
+* @param startFrom The index to start looking from.
+* @return The index of the first character of the substring or
+* -1 if not in the CharList. Also returns -1 if startFrom is
+* negative.
+*/
+public int indexOf(CharList substring, int startFrom){
+//TODO Write your code here, then delete this comment
+return -1;
+}
+
+/**
+* Deletes the char at the argument index. Characters will be
+* shifted back to fill in the empty space. The char array will
+* be resized to fit only the non-null characters. Any blank
+* space must be removed such that "racecar".deleteChar(3)
+* results in the CharList "raccar". If the index is out of
+* bounds, the array will not be changed and the method
+* returns -1.
+* @param index position of char to delete
+* @return true if index is within the bounds of the array
+*/
+public boolean deleteChar(int index){
+//TODO Write your code here, then delete this comment
+return false;
+}
+
+/**
+* Deletes the substring from start (inclusive) up to
+* end (exclusive). The empty space is filled by shifting the
+* leftover characters back and resizing the array to fit only
+* the characters that are left.
+* <p>Examples:</p>
+* <ul>
+* <li>new CharList("yes").deleteRange(1, 2) becomes "ys" and
+* returns true</li>
+* <li>new CharList("yes").deleteRange(0, 2) becomes "s" and
+* returns true</li>
+* <li>new CharList("yes").getRange(0, 4) stays "yes" and returns
+* false</li>
+* </ul>
+* @param start index of the char to start at
+* @param end index of the char to stop before
+* @return true if the range was successfully deleted;
+* otherwise false.
+*/
+public boolean deleteRange(int start, int end){
+//TODO Write your code here, then delete this comment
+return false;
+}
+
+/**
+* Returns the number of instances of substring that are found
+* while iterating through the calling object. If the argument
+* CharList is null or an empty string, it will return -1.
+* @param substring the sequence of characters to find.
+* @return The number of times the argument substring was found
+* in this CharList or -1 to indicate an error.
+*/
+public int count(CharList substring) {
+//TODO Write your code here, then delete this comment
+return -1;
+}
+
+/**
+* Creates and returns an array of CharLists where each item is
+* a token from this CharList that ends with either the argument
+* separator or the end of the CharList.
+* <p>Examples:</p>
+* <ul>
+* <li>"you and me".split(' ') returns ["you", "and", "me"]</li>
+* <li>"28/08/1989".split('/') returns ["28", "08", "1989"]</li>
+* <li>"aabaa".split('a') returns ["", "", "b", "", ""]</li>
+* <li>"".split('.') returns [""]</li>
+* </ul>
+* @param separator The char to delimit each token.
+* @return An array of CharList substrings where each substring
+* is delimited by instances of the argument separator.
+*/
+public CharList[] split(char separator) {
+//TODO Write your code here, then delete this comment
+return null;
+}
+
+/**
+* Deletes the first instance of the argument substring if it is
+* found in this CharList. Any blank space must be removed such
+* that "racecar".deleteSubstring("cec") results in the CharList
+* "raar"
+*
+* @param substring The string to find.
+* @return the index of the first character in the substring that
+* was deleted or -1 if the substring was not found.
+*/
+public int deleteSubstring(CharList substring){
+//TODO Write your code here, then delete this comment
+return -1;
+}
+
+/**
+* Capitalizes the first letter of each word in the CharList.
+* You may use Character.toUpperCase(chr)
+*/
+public void toTitleCase(){
+//TODO Write your code here, then delete this comment
+}
+
+public static void main(String[] args) {
+	CharList arr = new CharList("food");
+	System.out.println(arr.length());
+	System.out.println(arr.toString());
+	
+	System.out.println(arr.toString());
+}
+}

@@ -1,0 +1,61 @@
+project -  1. Frontend : where the design is implemented Java| .net| python
+	   2. Backend : Data storage Oracle | SQL server | mySQL | DB2
+	   
+		Company		Product
+-----------------------------------------------
+		Oracle Corp	Oracle | mySQL
+		Microsoft	SQL server
+		IBM		DB2
+		Open Source	PostGres DB
+				-------------
+				Language is called SQL for these products
+
+DataBase: what is it?
+	Collection of related tables 
+	Table: collection of records
+	Records: collection of fields
+	Fields: used to store particular values
+	EX. 
+	DEPT							EMP
+	------							----------------------
+	DEPTNO(PK)	DNAME	LOC  <- fields			EMPNO	ENAME	SAL	DEPTNO(PK)
+	10		EDP	NYK <- record			1	AA	444	30
+	20		SALES	TAX
+	30		ACCOUNT	GBK
+
+----------------------------
+ORACLE
+-----------
+market leader in DB reason for learning this DB framework
+most compatible with java 
+-------
+Installation of ORACLE
+----------------------
+	Express Edition- free
+	Two Versions	
+	21C
+	18c
+	11G- light version of 18c and 21c
+both work but prefer 18c since it has more support
+
+**ORACLE only compatible with linux and Windows**
+Macintosh install requires VM to run
+
+Starting Oracle-----
+1. search sqlplus on search bar
+2. enter /AS SYSDBA to login to oracle as admin
+3. enter command for 18c 
+	-- alter session set "_ORACLE_SCRIPT" =  true
+4. create users for practice
+	enter command: GRAND CONNECT,RESOURCE,DBA TO SCOTT IDENTIFIED BY TIGER;
+5. to login do CONNECT  SCOTT/TIGER
+SQL>
+SQL>
+SQL>
+
+creating a Sample Table
+look up demobld.sql in google and copy paste the table into oracle
+
+
+
+

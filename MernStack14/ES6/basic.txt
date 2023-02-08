@@ -1,0 +1,110 @@
+// Q1
+
+//hoisting
+
+console.log(randObject);
+
+var randObject = "hoisting"
+
+// overWriting in js since overloading doesnt exist
+
+function add2(a,b) {
+    return(a+b)
+}
+
+function add2(a,b,c) {
+    return (a+b+c)
+}
+
+//
+//console.log(add(2,3))
+//console.log(add2(1,2,3))
+
+//callbacks in JS
+function addition(a,b) {
+    return a+b
+}
+function multiply(a,b) {
+    return a*b
+}
+
+function arithmetic(callback,a,b) {
+    return callback(a,b)
+}
+
+//addition callback with arithmetic function
+console.log(arithmetic(addition,1,2))
+console.log(arithmetic(multiply,3,3))
+
+// Q2.
+
+var changeVal = "Robert"    //String
+changeVal = .0266           //number
+changeVal = false           //boolean
+changeVal = {myname : "Test Me"}    //Object with string var
+changeVal = 25166665        //number
+changeVal = undefined       //undefined or default
+changeVal = true            //boolean
+changeVal = "Robert Jr."    //string
+changeVal = null            //object with null
+changeVal = {}              //empty object
+
+changeVal = -32767          //number
+
+
+// Q3. function with 3 params of user info and prints them
+
+function showUserInfo(firstname, lastname,age) {
+console.log("details of user:\nName:"+firstname+" "+lastname+"\nAge: "+age)
+
+}
+
+showUserInfo("Carlos","Valdez",25)
+
+// Q4 function that takes 3 params and returns sum of those
+function add(a,b,c) {
+    return (a+b+c)
+}
+
+// console.log(add(2,4,6))    //gives result of 12 js assumes normal addition operator
+// console.log(add(2))        //Nan due to there not being enough params to successfully return a number result therefore NaN is returned
+// console.log(add(2.3,3))    //Nan as it still needs its third paramter to return a result so Nan is returned since its Null value
+// console.log(add("first",2,"three")) // prints first2three not type specific params required in js unless otherwise stated
+
+
+// Q5 Event loop
+
+//starting point of loop with settimeout
+console.log("start of loop")
+
+//first time out goes into stack sees that its timeout so gets put into API callback
+//once its finsished then executes whats inside the function
+//pritns out first callback 
+// then sees another setTimeout which then gets put into API callback
+//once retrieved from call back whats inside the function will get executed after second call back
+setTimeout(function(){
+    console.log("First callback")
+    setTimeout(function(){
+        console.log("Inner Callback of first")
+    },0)
+},1000)
+//gets put into API callback after first settimeout
+//prints after first call back since its been the API callback after the first
+setTimeout(function(){
+    console.log("Second callBack")
+},1000)
+
+console.log("end of loop")
+
+// Q6
+//import and export how its done example
+ User ={name:"user",task:"coding"}
+ //calling in from a separate file but not done here
+// export const newUser = User
+//importing object from said file into current to use
+// import {newUser} from "./basic.js";
+
+
+
+
+
