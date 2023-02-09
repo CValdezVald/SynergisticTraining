@@ -18,3 +18,9 @@
 // nodemon : node monitoring tool so when files are alter it updates node server
 
 //package lock.json aids in preventing version confliction between packages
+
+// 4  things to learn in express
+// 1. const app = express() - is the application
+// 2. request object
+// 3. response object
+// 4. router

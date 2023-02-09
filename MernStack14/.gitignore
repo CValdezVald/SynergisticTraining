@@ -1,1 +1,3 @@
 /node-server/node_modules
+/reactapp/node_modules
+/reactapp/package-lock.json
