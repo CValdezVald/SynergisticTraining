@@ -1,0 +1,11 @@
+TODO
+login module
+1. login table with (userid, password)
+a. create procedure for insert in above table
+	validate data
+		--userid>5 chr
+		-- pass -5chr
+2. update
+	userid ---> change the password
+			min 5 char
+3. display the data -- all record| user id will get all details

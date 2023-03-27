@@ -1,14 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
+import  {BrowserRouter as Router, Routes, RedirectFunction, Route} from "react-router-dom"
+import "./app.css"
 
-let DefaultApp = ()=>{
-    let firstValue = 25;
-    let secondValue = 25;
-    return(
-        <>
-            <h2>My First React Application</h2>
-            <label>Sum Is : {firstValue+ secondValue}</label>
-        </>
-    )
+import Header from "./Common/HeaderComponent";
+import HomeComponent from "./Common/HomeComponent";
+import Footer from "./Common/FooterComponent";
+import About from "./Common/AboutComponent"
+import NotFound from "./Common/NotFound";
+
+export default class ApplicationComponent extends Component{
+
+   
+    
+    render(){
+        return(
+        <Router>
+            <Header/>
+            <Routes>
+                <Route path ="/home" element ={<HomeComponent title={"Home Page Title"}/>}/>
+                <Route path = "/about" element ={<About/>} />
+                <Route path ="/about/:id" element={<About/>} />
+                <Route path ="*" element = {<NotFound/>}/>
+            </Routes>
+            <Footer/>
+        </Router>
+
+        )
+    }
 }
 
-export default DefaultApp;
+
+
+//class component and functional component
+//passing and sharing data between components
