@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import {connect} from "react-redux";
 
-let Header = ()=>{
 
-    let userName = "";
+let Header = (props)=>{
+
+    console.log(props.user)
+    let userName = props.user.userName;
 
     let navigate = useNavigate();
 
@@ -27,4 +30,15 @@ let Header = ()=>{
     )
 }
 
-export default Header;
+//subscribe - mapStateToProps same as mapStoreToProps
+//publisher - mapDispatchToProps same as send new state to store
+
+let mapStateToProps = (state)=>{
+    return{
+        user: state.userReducer
+    }
+}
+
+export default connect(mapStateToProps,null)(Header);
+
+// export default r

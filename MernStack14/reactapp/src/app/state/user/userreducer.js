@@ -5,10 +5,10 @@
 import * as ActionTypes from "../actionTypes";
 
 let initialState = {
-    UserName: "Default User Name",
+    userName: "Default User Name",
     password:"password",
-    Address:"default address",
-    Mobile:""
+    address:"default address",
+    mobile:"0001001010"
 }
 //store : upon looking into all dispatched actions will match given action types
 //defined in each reducer will return new state on the basis of changes done in switch statement\
@@ -20,7 +20,8 @@ let userReducer = (state= initialState, action)=>{
                 return action.payload
         
             default:
-                state
-                break;
+                return state;
+             
         }
 }
+export default userReducer;

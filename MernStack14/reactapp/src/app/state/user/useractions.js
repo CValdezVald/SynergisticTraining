@@ -3,9 +3,10 @@
 import * as ActionTypes from "../actionTypes";
 
 //action is the object that we'll dispatch from user component to store/reducer
-let addUserToStore = (user)=>{
+export const addUserToStore = (user)=>{
     return {
         type : ActionTypes.USER_ADDUSER,
         payload : user
     }
 }
+
